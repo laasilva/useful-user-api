@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ${APPLICATION_NAME}
+  jmx:
+    enabled: true
+  main:
+    allow-bean-definition-overriding: true
+    banner-mode: log
+
+  flyway:
+    enabled: false
+
+  server:
+    address: 127.0.0.1
+    security:
+      enabled: true
+    endpoints:
+      web:
+        exposure:
+          include: health
+    endpoint:
+      health:
+        show-details: always
+    port: ${SERVER_PORT}
+    servlet:
+      context-path: ${SERVLET_CONTEXT_PATH}
