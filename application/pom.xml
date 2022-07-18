@@ -115,15 +115,15 @@
             <version>${slf4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.starter</groupId>
+            <groupId>com.projecthellfire.usefuluserapi</groupId>
             <artifactId>core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.starter</groupId>
+            <groupId>com.projecthellfire.usefuluserapi</groupId>
             <artifactId>datasource</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <!-- tests -->

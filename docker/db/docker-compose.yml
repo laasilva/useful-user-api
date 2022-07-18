@@ -1,0 +1,18 @@
+version: '3.6'
+services:
+  user_db:
+    image: postgres
+    container_name: hellfire_user
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "user_db"
+      POSTGRES_USER: "tswizle"
+      POSTGRES_PASSWORD: "speaknow"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-volume:/var/lib/user_db
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./custom.cnf:/etc/mysql/conf.d/custom.cnf
+volumes:
+  postgres-volume:
