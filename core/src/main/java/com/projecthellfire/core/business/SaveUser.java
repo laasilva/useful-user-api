@@ -21,6 +21,7 @@ public class SaveUser implements SaveUserCommand {
         if(exists)
             throw new UserExistsException(ErrorMessage.USER_EXISTS.getCode(),
                     ErrorMessage.USER_EXISTS.getMessage());
+
         return persist.save(user);
     }
 

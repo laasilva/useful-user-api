@@ -1,5 +1,6 @@
 package com.projecthellfire.application.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,6 @@ public class UserResponse {
     Integer id;
     @JsonProperty
     String username;
-    @JsonProperty
+    @JsonIgnore
     String password;
 }

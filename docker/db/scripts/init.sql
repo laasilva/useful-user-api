@@ -4,10 +4,7 @@ DROP TABLE IF EXISTS tb_user_top_five;
 
 CREATE SCHEMA IF NOT EXISTS priv;
 
-CREATE ROLE apiadm LOGIN PASSWORD 'folklore';
-
 GRANT ALL ON SCHEMA priv to tswizle;
-GRANT ALL ON SCHEMA priv to apiadm;
 
 create table priv.tb_user (
      id int generated always as identity not null,

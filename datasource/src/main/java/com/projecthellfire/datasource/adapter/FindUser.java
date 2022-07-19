@@ -32,8 +32,7 @@ public class FindUser implements FindUserAdapter {
         var entity = repository.findByUsername(username);
 
         if(entity.isEmpty())
-            throw new UserNotFoundException(ErrorMessage.USER_NOT_FOUND_USERNAME.getCode(),
-                    ErrorMessage.USER_NOT_FOUND_USERNAME.getMessage());
+            return null;
 
         return mapper.toModel(entity.get());
     }
@@ -43,7 +42,8 @@ public class FindUser implements FindUserAdapter {
         var entity = repository.findById(id);
 
         if(entity.isEmpty())
-            return null;
+            throw new UserNotFoundException(ErrorMessage.USER_NOT_FOUND_ID.getCode(),
+                    ErrorMessage.USER_NOT_FOUND_ID.getMessage());
 
         return mapper.toModel(entity.get());
     }
