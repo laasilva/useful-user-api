@@ -3,7 +3,7 @@ package com.projecthellfire.application;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = "com.projecthellfire.application")
+@SpringBootApplication(scanBasePackages = "com.projecthellfire")
 public class Application {
 
     public static void main(String[] args) {
