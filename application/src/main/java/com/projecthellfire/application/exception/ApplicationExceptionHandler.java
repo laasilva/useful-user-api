@@ -1,8 +1,9 @@
-package com.projecthellfire.application.mapper;
+package com.projecthellfire.application.exception;
 
-import com.projecthellfire.application.dto.ResponseDto;
+import com.projecthellfire.application.dto.GlobalResponseDto;
 import com.projecthellfire.core.exception.CoreException;
 import com.projecthellfire.core.exception.Error;
+import com.projecthellfire.core.exception.UserExistsException;
 import com.projecthellfire.core.exception.UserNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -23,9 +24,17 @@ public class ApplicationExceptionHandler {
     }
 
     @ExceptionHandler
-    public ResponseEntity<ResponseDto<Error>> handleUserNotFoundException(UserNotFoundException exception,
-                                                                          WebRequest request) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ResponseDto.<Error>builder()
+    public ResponseEntity<GlobalResponseDto<Error>> handleUserNotFoundException(UserNotFoundException exception,
+                                                                                WebRequest request) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(GlobalResponseDto.<Error>builder()
+                        .data(List.of(exception.getErrorMessage()))
+                .build());
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<GlobalResponseDto<Error>> handleUserExistsException(UserExistsException exception,
+                                                                              WebRequest request) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(GlobalResponseDto.<Error>builder()
                         .data(List.of(exception.getErrorMessage()))
                 .build());
     }
