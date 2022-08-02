@@ -25,7 +25,7 @@ This application has three main tiers: Driving side (application), Domain side (
 - Domain side: The Domain tier is responsible for the business side of the application, acting as the literal port between the driving and driven tiers. Here, we'll have the use cases, models, and ports.
 - Driven side: This last but least one is responsible for everything concerning data, being the bearer of entities and repositories, as well as database configuration.
 
-![Hexagonal Architecture Diagram](resources/diagram.jpg)
+![Hexagonal Architecture Diagram](resources/diagram.png)
 
 ### Got it, but *why* should I use Hexagonal?
 As a :sparkles:*very helpful*:sparkles: article published over at SSENSE-TECH would say,
