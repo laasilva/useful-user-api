@@ -8,10 +8,11 @@ import java.util.List;
 public class TestMocks {
     private final static Integer ID = 1;
     private final static String USERNAME = "username";
+    private final static String EMAIL = "username@teste.com";
     private final static String PASSWORD = "password123";
 
     // entities
-    public static UserEntity userEntityMock() { return new UserEntity(ID, USERNAME, PASSWORD); }
+    public static UserEntity userEntityMock() { return new UserEntity(ID, USERNAME, EMAIL, PASSWORD); }
     public static List<UserEntity> userEntityListMock() {
         return List.of(userEntityMock(), userEntityMock());
     }

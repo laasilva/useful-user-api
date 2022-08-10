@@ -3,7 +3,7 @@ package com.projecthellfire.application.exception;
 import com.projecthellfire.application.dto.GlobalResponseDto;
 import com.projecthellfire.core.exception.CoreException;
 import com.projecthellfire.core.exception.Error;
-import com.projecthellfire.core.exception.UserExistsException;
+import com.projecthellfire.core.exception.ValidationException;
 import com.projecthellfire.core.exception.UserNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -32,7 +32,7 @@ public class ApplicationExceptionHandler {
     }
 
     @ExceptionHandler
-    public ResponseEntity<GlobalResponseDto<Error>> handleUserExistsException(UserExistsException exception,
+    public ResponseEntity<GlobalResponseDto<Error>> handleUserExistsException(ValidationException exception,
                                                                               WebRequest request) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(GlobalResponseDto.<Error>builder()
                         .data(List.of(exception.getErrorMessage()))

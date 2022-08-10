@@ -8,7 +8,6 @@ import java.security.NoSuchAlgorithmException;
 
 @Slf4j
 public class PasswordUtil {
-
     public static String encrypt(String decryptedPassword) throws PasswordEncryptionException {
         try {
             MessageDigest message = MessageDigest.getInstance("MD5");
@@ -17,8 +16,8 @@ public class PasswordUtil {
             byte[] bytes = message.digest();
 
             StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < bytes.length; i++) {
-                builder.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16)
+            for (byte aByte : bytes) {
+                builder.append(Integer.toString((aByte & 0xff) + 0x100, 16)
                         .substring(1));
             }
 
