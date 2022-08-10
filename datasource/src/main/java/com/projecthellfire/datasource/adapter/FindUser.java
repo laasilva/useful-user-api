@@ -38,6 +38,16 @@ public class FindUser implements FindUserAdapter {
     }
 
     @Override
+    public User findByEmail(String email) {
+        var entity = repository.findByEmail(email);
+
+        if(entity.isEmpty())
+            return null;
+
+        return mapper.toModel(entity.get());
+    }
+
+    @Override
     public User findById(Integer id) {
         var entity = repository.findById(id);
 

@@ -9,6 +9,7 @@ GRANT ALL ON SCHEMA priv to tswizle;
 create table priv.tb_user (
      id int generated always as identity not null,
      username varchar(50) not null,
+     email varchar(255) not null,
      password varchar(255) not null,
      primary key(id)
 );

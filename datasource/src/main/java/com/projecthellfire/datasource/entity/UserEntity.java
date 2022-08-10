@@ -20,5 +20,8 @@ public class UserEntity {
     String username;
 
     @Column(nullable = false)
+    String email;
+
+    @Column(nullable = false)
     String password;
 }
