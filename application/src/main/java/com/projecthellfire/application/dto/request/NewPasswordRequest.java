@@ -8,11 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UserRequest {
-    @JsonProperty
-    String username;
-    @JsonProperty
-    String email;
+public class NewPasswordRequest {
     @JsonProperty
     String password;
 }

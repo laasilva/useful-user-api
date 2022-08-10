@@ -1,9 +1,9 @@
 package com.projecthellfire.core.exception;
 
-public class UserExistsException  extends RuntimeException {
+public class ValidationException extends RuntimeException {
     private final Error error;
 
-    public UserExistsException(String status, String message) {
+    public ValidationException(String status, String message) {
         super();
         this.error = new Error(status, message);
     }

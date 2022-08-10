@@ -1,22 +1,16 @@
 package com.projecthellfire.application.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.projecthellfire.application.configuration.BeanConfiguration;
 import com.projecthellfire.application.mapper.UserDtoMapper;
-import com.projecthellfire.core.port.command.LoginCommand;
+import com.projecthellfire.core.port.command.EditPasswordCommand;
 import com.projecthellfire.core.port.command.SaveUserCommand;
-import com.projecthellfire.core.port.command.SearchUserCommand;
-import com.projecthellfire.core.util.PasswordUtil;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -27,48 +21,30 @@ import static org.mockito.Mockito.*;
 import static com.projecthellfire.application.TestMocks.*;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(controllers = UserPostController.class)
+@WebMvcTest(controllers = UserPutController.class)
 @RunWith(SpringRunner.class)
-public class UserPostControllerTest {
+public class UserPutControllerTest {
+
     @Autowired
     private MockMvc mockMvc;
     @MockBean
     private UserDtoMapper mapper;
     @MockBean
-    private SaveUserCommand saveUserCommand;
-    @MockBean
-    private SearchUserCommand searchUserCommand;
-    @MockBean
-    private LoginCommand loginCommand;
+    private EditPasswordCommand editPasswordCommand;
 
     @Test
-    public void save2xx_test() throws Exception {
-        var userRequest = userRequestMock();
-
+    public void searchAllUsers2xx_test() throws Exception {
+        when(editPasswordCommand.update(any(), anyString())).thenReturn(userModelMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 
         ObjectMapper jsonMapper = new ObjectMapper();
 
         var response = mockMvc.perform(
-                MockMvcRequestBuilders.post(ENDPOINT + PATH_NEW)
+                MockMvcRequestBuilders.put(ENDPOINT + PATH_PASSWORD + "/" + USERNAME)
                         .contentType(MediaType.APPLICATION_JSON)
+                        .characterEncoding("utf-8")
                         .accept(MediaType.APPLICATION_JSON_VALUE)
-                        .content(jsonMapper.writeValueAsBytes(userRequest))
-        ).andExpect(MockMvcResultMatchers.status().isCreated());
-    }
-    @Test
-    public void login2xx_test() throws Exception {
-        var loginRequest = loginRequestMock();
-
-        when(mapper.toDto(any())).thenReturn(userResponseMock());
-
-        ObjectMapper jsonMapper = new ObjectMapper();
-
-        var response = mockMvc.perform(
-                MockMvcRequestBuilders.post(ENDPOINT + PATH_LOGIN)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .accept(MediaType.APPLICATION_JSON_VALUE)
-                        .content(jsonMapper.writeValueAsBytes(loginRequest))
+                        .content(jsonMapper.writeValueAsBytes(newPasswordRequestMock()))
         ).andExpect(MockMvcResultMatchers.status().isOk());
     }
 }
