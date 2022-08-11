@@ -8,7 +8,7 @@ import com.projecthellfire.core.model.User;
 
 import java.util.List;
 
-public class TestMocks {
+public class ApplicationTestMocks {
     public final static Integer ID = 1;
     public final static String USERNAME = "username";
     private final static String EMAIL = "username@teste.com";

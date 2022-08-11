@@ -3,8 +3,7 @@ package com.projecthellfire.application.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.projecthellfire.application.mapper.UserDtoMapper;
 import com.projecthellfire.core.port.command.EditPasswordCommand;
-import com.projecthellfire.core.port.command.SaveUserCommand;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +17,12 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.mockito.Mockito.*;
-import static com.projecthellfire.application.TestMocks.*;
+import static com.projecthellfire.application.ApplicationTestMocks.*;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = UserPutController.class)
 @RunWith(SpringRunner.class)
-public class UserPutControllerTest {
+class UserPutControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -33,7 +32,7 @@ public class UserPutControllerTest {
     private EditPasswordCommand editPasswordCommand;
 
     @Test
-    public void searchAllUsers2xx_test() throws Exception {
+    void searchAllUsers2xx_test() throws Exception {
         when(editPasswordCommand.update(any(), anyString())).thenReturn(userModelMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 

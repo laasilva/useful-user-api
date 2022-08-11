@@ -1,19 +1,19 @@
 package com.projecthellfire.core.business;
 
 import com.projecthellfire.core.port.adapter.FindUserAdapter;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.projecthellfire.core.TestMocks.*;
+import static com.projecthellfire.core.CoreTestMocks.*;
 
-public class SearchUserTest {
+class SearchUserTest {
 
     private final FindUserAdapter find = mock(FindUserAdapter.class);
     private final SearchUser searchUser = new SearchUser(find);
 
     @Test
-    public void findAllSuccess_test() {
+    void findAllSuccess_test() {
         when(find.findAll()).thenReturn(userModelListMock());
 
         var response = searchUser.findAll();
@@ -21,7 +21,7 @@ public class SearchUserTest {
     }
 
     @Test
-    public void findByUsernameSuccess_test() {
+    void findByUsernameSuccess_test() {
         when(find.findByUsername(anyString())).thenReturn(userModelMock());
 
         var response = searchUser.findByUsername(anyString());
@@ -29,7 +29,7 @@ public class SearchUserTest {
     }
 
     @Test
-    public void findByIdSuccess_test() {
+    void findByIdSuccess_test() {
         when(find.findById(anyInt())).thenReturn(userModelMock());
 
         var response = searchUser.findById(anyInt());

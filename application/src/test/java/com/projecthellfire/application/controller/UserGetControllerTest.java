@@ -2,11 +2,9 @@ package com.projecthellfire.application.controller;
 
 import com.projecthellfire.application.mapper.UserDtoMapper;
 import com.projecthellfire.core.port.command.SearchUserCommand;
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -20,12 +18,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
-import static com.projecthellfire.application.TestMocks.*;
+import static com.projecthellfire.application.ApplicationTestMocks.*;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = UserGetController.class)
 @RunWith(SpringRunner.class)
-public class UserGetControllerTest {
+class UserGetControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
@@ -34,7 +32,7 @@ public class UserGetControllerTest {
     private SearchUserCommand searchUserCommand;
 
     @Test
-    public void searchAllUsers2xx_test() throws Exception {
+    void searchAllUsers2xx_test() throws Exception {
         when(searchUserCommand.findAll()).thenReturn(userModelListMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 
@@ -47,7 +45,7 @@ public class UserGetControllerTest {
     }
 
     @Test
-    public void searchAllUsers2xxEmpty_test() throws Exception {
+    void searchAllUsers2xxEmpty_test() throws Exception {
         when(searchUserCommand.findAll()).thenReturn(List.of());
         when(mapper.toDto(any())).thenReturn(null);
 
@@ -60,7 +58,7 @@ public class UserGetControllerTest {
     }
 
     @Test
-    public void searchByUsername2xx_test() throws Exception {
+    void searchByUsername2xx_test() throws Exception {
         when(searchUserCommand.findByUsername(anyString())).thenReturn(userModelMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 
@@ -73,7 +71,7 @@ public class UserGetControllerTest {
     }
 
     @Test
-    public void searchById2xx_test() throws Exception {
+    void searchById2xx_test() throws Exception {
         when(searchUserCommand.findById(anyInt())).thenReturn(userModelMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 
