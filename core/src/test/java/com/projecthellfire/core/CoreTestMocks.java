@@ -6,7 +6,7 @@ import com.projecthellfire.core.util.PasswordUtil;
 
 import java.util.List;
 
-public class TestMocks {
+public class CoreTestMocks {
     private final static Integer ID = 1;
     private final static String USERNAME = "username";
     private final static String EMAIL = "username@teste.com";

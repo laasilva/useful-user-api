@@ -2,7 +2,7 @@ package com.projecthellfire.application.controller;
 
 import com.projecthellfire.application.mapper.UserDtoMapper;
 import com.projecthellfire.core.port.command.RemoveUserCommand;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,12 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.mockito.Mockito.*;
-import static com.projecthellfire.application.TestMocks.*;
+import static com.projecthellfire.application.ApplicationTestMocks.*;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = UserDeleteController.class)
 @RunWith(SpringRunner.class)
-public class UserDeleteControllerTest {
+class UserDeleteControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
@@ -30,7 +30,7 @@ public class UserDeleteControllerTest {
     private UserDtoMapper mapper;
 
     @Test
-    public void searchAllUsers2xx_test() throws Exception {
+    void searchAllUsers2xx_test() throws Exception {
         when(removeUserCommand.delete(anyString())).thenReturn(true);
 
         var response = mockMvc.perform(
