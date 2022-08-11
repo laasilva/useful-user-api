@@ -43,8 +43,7 @@
             **/model/**,
             **/entity/**,
             **/exception/**,
-            **/mapper/**,
-            **/**Test**/**
+            **/mapper/**
         </sonar.exclusions>
         <sonar.jdbc.dialect>mysql</sonar.jdbc.dialect>
         <sonar.projectName>${application.name.value}</sonar.projectName>
