@@ -1,9 +1,9 @@
 
 # Useful User API
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=laasilva_useful-user-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=laasilva_useful-user-api)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 <br />
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=laasilva_useful-user-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=laasilva_useful-user-api)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=laasilva_useful-user-api&metric=coverage)](https://sonarcloud.io/summary/new_code?id=laasilva_useful-user-api)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=laasilva_useful-user-api&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=laasilva_useful-user-api)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=laasilva_useful-user-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=laasilva_useful-user-api)
