@@ -8,7 +8,6 @@ import com.projecthellfire.application.mapper.UserDtoMapper;
 import com.projecthellfire.core.exception.PasswordEncryptionException;
 import com.projecthellfire.core.port.command.LoginCommand;
 import com.projecthellfire.core.port.command.SaveUserCommand;
-import com.projecthellfire.core.util.PasswordUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -45,11 +44,14 @@ public class UserPostController {
 
         var response = loginCommand.login(mapper.toModel(request));
 
-        return ResponseEntity.ok(ResponseDto.builder()
+        return response ? ResponseEntity.ok(ResponseDto.builder()
                 .data(UserPostResponse.builder()
                         .username(request.getUsername())
-                        .status(response ? HttpStatus.OK.getReasonPhrase() :
-                                HttpStatus.UNPROCESSABLE_ENTITY.getReasonPhrase())
-                        .build()).build());
+                        .status(HttpStatus.OK.getReasonPhrase())
+                        .build()).build()) : new ResponseEntity<>(ResponseDto.builder()
+                .data(UserPostResponse.builder()
+                        .username(request.getUsername())
+                        .status(HttpStatus.UNPROCESSABLE_ENTITY.getReasonPhrase())
+                        .build()).build(), HttpStatus.UNPROCESSABLE_ENTITY);
     }
 }
