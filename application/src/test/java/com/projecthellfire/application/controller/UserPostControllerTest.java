@@ -56,6 +56,7 @@ class UserPostControllerTest {
         var loginRequest = loginRequestMock();
 
         when(mapper.toDto(any())).thenReturn(userResponseMock());
+        when(loginCommand.login(any())).thenReturn(true);
 
         ObjectMapper jsonMapper = new ObjectMapper();
 
@@ -65,5 +66,20 @@ class UserPostControllerTest {
                         .accept(MediaType.APPLICATION_JSON_VALUE)
                         .content(jsonMapper.writeValueAsBytes(loginRequest))
         ).andExpect(MockMvcResultMatchers.status().isOk());
+    }
+    @Test
+    void login4xx_test() throws Exception {
+        var loginRequest = loginRequestMock();
+
+        when(mapper.toDto(any())).thenReturn(null);
+
+        ObjectMapper jsonMapper = new ObjectMapper();
+
+        var response = mockMvc.perform(
+                MockMvcRequestBuilders.post(ENDPOINT + PATH_LOGIN)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON_VALUE)
+                        .content(jsonMapper.writeValueAsBytes(loginRequest))
+        ).andExpect(MockMvcResultMatchers.status().isUnprocessableEntity());
     }
 }
