@@ -7,12 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.projecthellfire.datasource.TestMocks.*;
+import static com.projecthellfire.datasource.DatasourceTestMocks.*;
 
 @ExtendWith(SpringExtension.class)
 class FindUserTest {

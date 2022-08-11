@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.projecthellfire.core.TestMocks.*;
+import static com.projecthellfire.core.CoreTestMocks.*;
 
 class SaveUserTest {
     private final PersistUserAdapter persist = mock(PersistUserAdapter.class);

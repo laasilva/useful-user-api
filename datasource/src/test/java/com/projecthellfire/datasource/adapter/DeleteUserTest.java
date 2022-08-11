@@ -5,7 +5,7 @@ import com.projecthellfire.datasource.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import static com.projecthellfire.datasource.TestMocks.userModelMock;
+import static com.projecthellfire.datasource.DatasourceTestMocks.userModelMock;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;

@@ -8,7 +8,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.projecthellfire.datasource.TestMocks.*;
+import static com.projecthellfire.datasource.DatasourceTestMocks.*;
 
 @ExtendWith(SpringExtension.class)
 class PersistUserTest {

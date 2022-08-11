@@ -3,7 +3,6 @@ package com.projecthellfire.application.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.projecthellfire.application.mapper.UserDtoMapper;
 import com.projecthellfire.core.port.command.EditPasswordCommand;
-import com.projecthellfire.core.port.command.SaveUserCommand;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
@@ -18,7 +17,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.mockito.Mockito.*;
-import static com.projecthellfire.application.TestMocks.*;
+import static com.projecthellfire.application.ApplicationTestMocks.*;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = UserPutController.class)

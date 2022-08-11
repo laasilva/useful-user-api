@@ -6,8 +6,8 @@ import com.projecthellfire.core.port.adapter.PersistUserAdapter;
 import com.projecthellfire.core.util.Validation;
 import org.junit.jupiter.api.Test;
 
-import static com.projecthellfire.core.TestMocks.getUSERNAME;
-import static com.projecthellfire.core.TestMocks.userModelMock;
+import static com.projecthellfire.core.CoreTestMocks.getUSERNAME;
+import static com.projecthellfire.core.CoreTestMocks.userModelMock;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static org.mockito.ArgumentMatchers.any;

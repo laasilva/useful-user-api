@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static com.projecthellfire.core.TestMocks.*;
+import static com.projecthellfire.core.CoreTestMocks.*;
 
 class LoginTest {
     private final FindUserAdapter find = mock(FindUserAdapter.class);
