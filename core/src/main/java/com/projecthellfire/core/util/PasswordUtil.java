@@ -1,12 +1,14 @@
 package com.projecthellfire.core.util;
 
 import com.projecthellfire.core.exception.PasswordEncryptionException;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 @Slf4j
+@NoArgsConstructor
 public class PasswordUtil {
     public static String encrypt(String decryptedPassword) throws PasswordEncryptionException {
         try {
