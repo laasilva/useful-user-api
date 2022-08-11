@@ -48,7 +48,8 @@ public class UserPostController {
         return ResponseEntity.ok(ResponseDto.builder()
                 .data(UserPostResponse.builder()
                         .username(request.getUsername())
-                        .status(HttpStatus.OK.getReasonPhrase())
+                        .status(response ? HttpStatus.OK.getReasonPhrase() :
+                                HttpStatus.UNPROCESSABLE_ENTITY.getReasonPhrase())
                         .build()).build());
     }
 }
