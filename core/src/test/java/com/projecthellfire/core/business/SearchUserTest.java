@@ -1,7 +1,7 @@
 package com.projecthellfire.core.business;
 
 import com.projecthellfire.core.port.adapter.FindUserAdapter;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;

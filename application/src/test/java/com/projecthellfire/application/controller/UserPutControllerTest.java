@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.projecthellfire.application.mapper.UserDtoMapper;
 import com.projecthellfire.core.port.command.EditPasswordCommand;
 import com.projecthellfire.core.port.command.SaveUserCommand;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

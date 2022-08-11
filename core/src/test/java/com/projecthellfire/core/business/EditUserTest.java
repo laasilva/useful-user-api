@@ -4,7 +4,7 @@ import com.projecthellfire.core.exception.PasswordEncryptionException;
 import com.projecthellfire.core.port.adapter.FindUserAdapter;
 import com.projecthellfire.core.port.adapter.PersistUserAdapter;
 import com.projecthellfire.core.util.Validation;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static com.projecthellfire.core.TestMocks.getUSERNAME;
 import static com.projecthellfire.core.TestMocks.userModelMock;

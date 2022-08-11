@@ -1,4 +1,4 @@
-name: Java CI
+name: Java Sonarqube CI
 
 on:
   push:

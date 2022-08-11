@@ -7,7 +7,7 @@ import com.projecthellfire.core.port.command.LoginCommand;
 import com.projecthellfire.core.port.command.SaveUserCommand;
 import com.projecthellfire.core.port.command.SearchUserCommand;
 import com.projecthellfire.core.util.PasswordUtil;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;

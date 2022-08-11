@@ -1,14 +1,10 @@
 package com.projecthellfire.datasource.adapter;
 
 import com.projecthellfire.core.exception.UserNotFoundException;
-import com.projecthellfire.core.model.User;
-import com.projecthellfire.datasource.TestMocks;
-import com.projecthellfire.datasource.entity.UserEntity;
 import com.projecthellfire.datasource.mapper.UserEntityMapper;
 import com.projecthellfire.datasource.repository.UserRepository;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mockito;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;

@@ -49,7 +49,7 @@
                 <configuration>
                     <finalName>${application.name.value}</finalName>
                     <classifier>${repackage.classifier}</classifier>
-                    <mainClass>com.hexa.starter.application.Application</mainClass>
+                    <mainClass>com.projecthellfire.application.Application</mainClass>
                     <image>
                         <builder>paketobuildpacks/builder:tiny</builder>
                         <env>

@@ -6,7 +6,7 @@ import com.projecthellfire.core.model.User;
 import com.projecthellfire.core.port.adapter.FindUserAdapter;
 import com.projecthellfire.core.port.adapter.PersistUserAdapter;
 import com.projecthellfire.core.util.Validation;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;

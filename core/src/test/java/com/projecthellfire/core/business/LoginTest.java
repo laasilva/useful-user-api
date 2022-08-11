@@ -4,10 +4,10 @@ import com.projecthellfire.core.exception.PasswordEncryptionException;
 import com.projecthellfire.core.exception.ValidationException;
 import com.projecthellfire.core.port.adapter.FindUserAdapter;
 import com.projecthellfire.core.util.Validation;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 import static com.projecthellfire.core.TestMocks.*;
 
 public class LoginTest {

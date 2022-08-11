@@ -2,7 +2,7 @@ package com.projecthellfire.application.controller;
 
 import com.projecthellfire.application.mapper.UserDtoMapper;
 import com.projecthellfire.core.port.command.SearchUserCommand;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
