@@ -1,5 +1,6 @@
 
-# Hexagonal Architecture Starter
+# Useful User API
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=laasilva_useful-user-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=laasilva_useful-user-api)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 <br />
