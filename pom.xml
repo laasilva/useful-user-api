@@ -50,7 +50,6 @@
         <sonar.projectVersion>0.0.1-SNAPSHOT</sonar.projectVersion>
         <sonar.language>java</sonar.language>
         <sonar.binaries>build/classes</sonar.binaries>
-        <sonar.sources>src</sonar.sources>
         <sonar.tests>src/test</sonar.tests>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
         <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
