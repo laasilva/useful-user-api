@@ -23,7 +23,7 @@ import static com.projecthellfire.application.TestMocks.*;
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = UserPutController.class)
 @RunWith(SpringRunner.class)
-public class UserPutControllerTest {
+class UserPutControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -33,7 +33,7 @@ public class UserPutControllerTest {
     private EditPasswordCommand editPasswordCommand;
 
     @Test
-    public void searchAllUsers2xx_test() throws Exception {
+    void searchAllUsers2xx_test() throws Exception {
         when(editPasswordCommand.update(any(), anyString())).thenReturn(userModelMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 

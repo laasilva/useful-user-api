@@ -12,14 +12,14 @@ import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static com.projecthellfire.core.TestMocks.*;
 
-public class SaveUserTest {
+class SaveUserTest {
     private final PersistUserAdapter persist = mock(PersistUserAdapter.class);
     private final FindUserAdapter find = mock(FindUserAdapter.class);
     private final Validation validation = new Validation(find);
     private final SaveUser saveUser = new SaveUser(persist, validation);
 
     @Test
-    public void saveSuccess_test() throws PasswordEncryptionException {
+    void saveSuccess_test() throws PasswordEncryptionException {
         when(find.findByUsername(any())).thenReturn(null);
         when(persist.save(any())).thenReturn(userModelMock());
 
@@ -29,21 +29,21 @@ public class SaveUserTest {
     }
 
     @Test
-    public void saveUserExists_test() {
+    void saveUserExists_test() {
         when(find.findByUsername(any())).thenReturn(userModelMock());
 
         assertThrows(ValidationException.class, () -> saveUser.save(userModelMock()));
     }
 
     @Test
-    public void saveUserEmailExists_test() {
+    void saveUserEmailExists_test() {
         when(find.findByEmail(any())).thenReturn(userModelMock());
 
         assertThrows(ValidationException.class, () -> saveUser.save(userModelMock()));
     }
 
     @Test
-    public void saveUserNull_test() {
+    void saveUserNull_test() {
         assertThrows(ValidationException.class, () -> saveUser.save(User.builder()
                         .username("")
                         .email("")
@@ -52,7 +52,7 @@ public class SaveUserTest {
     }
 
     @Test
-    public void saveEmailPatternWrong_test() {
+    void saveEmailPatternWrong_test() {
         when(find.findByUsername(any())).thenReturn(null);
 
         assertThrows(ValidationException.class, () -> saveUser.save(User.builder()

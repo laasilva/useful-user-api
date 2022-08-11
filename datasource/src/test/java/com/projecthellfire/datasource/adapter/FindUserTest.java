@@ -15,14 +15,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import static com.projecthellfire.datasource.TestMocks.*;
 
 @ExtendWith(SpringExtension.class)
-public class FindUserTest {
+class FindUserTest {
 
     private final UserRepository repository = mock(UserRepository.class);
     private final UserEntityMapper mapper = mock(UserEntityMapper.class);
     private final FindUser findUser = new FindUser(repository, mapper);
 
     @Test
-    public void findAllSuccess_test() {
+    void findAllSuccess_test() {
         when(repository.findAll()).thenReturn(userEntityListMock());
         when(mapper.toModel(any())).thenReturn(userModelMock());
 
@@ -32,7 +32,7 @@ public class FindUserTest {
     }
 
     @Test
-    public void findByUsernameSuccess_test() {
+    void findByUsernameSuccess_test() {
         var entity = userEntityMock();
 
         when(repository.findByUsername(anyString())).thenReturn(Optional.of(entity));
@@ -44,13 +44,13 @@ public class FindUserTest {
     }
 
     @Test
-    public void findByUsernameNull_test() {
+    void findByUsernameNull_test() {
         when(repository.findByUsername(anyString())).thenReturn(Optional.empty());
         assertNull(findUser.findByUsername(anyString()));
     }
 
     @Test
-    public void findByIdSuccess_test() {
+    void findByIdSuccess_test() {
         var entity = userEntityMock();
 
         when(repository.findById(anyInt())).thenReturn(Optional.of(entity));
@@ -62,7 +62,7 @@ public class FindUserTest {
     }
 
     @Test
-    public void findByIdException_test() {
+    void findByIdException_test() {
         when(repository.findById(anyInt())).thenReturn(Optional.empty());
         assertThrows(UserNotFoundException.class, () -> findUser.findById(anyInt()));
     }

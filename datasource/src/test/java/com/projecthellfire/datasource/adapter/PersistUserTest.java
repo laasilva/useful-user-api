@@ -11,14 +11,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import static com.projecthellfire.datasource.TestMocks.*;
 
 @ExtendWith(SpringExtension.class)
-public class PersistUserTest {
+class PersistUserTest {
     private final UserRepository repository = mock(UserRepository.class);
     private final UserEntityMapper mapper =  mock(UserEntityMapper.class);
 
     private final PersistUser persistUser = new PersistUser(repository, mapper);
 
     @Test
-    public void saveSuccess_test() {
+    void saveSuccess_test() {
         when(repository.save(any())).thenReturn(userEntityMock());
         when(mapper.toModel(any())).thenReturn(userModelMock());
 

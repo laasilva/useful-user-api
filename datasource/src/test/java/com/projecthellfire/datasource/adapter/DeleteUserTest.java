@@ -11,14 +11,14 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
-public class DeleteUserTest {
+class DeleteUserTest {
     private final UserRepository repository = mock(UserRepository.class);
     private final UserEntityMapper mapper =  mock(UserEntityMapper.class);
     private final DeleteUser deleteUser = new DeleteUser(repository, mapper);
 
 
     @Test
-    public void saveSuccess_test() {
+    void saveSuccess_test() {
 
         when(mapper.toModel(any())).thenReturn(userModelMock());
 

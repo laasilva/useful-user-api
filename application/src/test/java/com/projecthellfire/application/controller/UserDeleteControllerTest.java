@@ -21,7 +21,7 @@ import static com.projecthellfire.application.TestMocks.*;
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = UserDeleteController.class)
 @RunWith(SpringRunner.class)
-public class UserDeleteControllerTest {
+class UserDeleteControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
@@ -30,7 +30,7 @@ public class UserDeleteControllerTest {
     private UserDtoMapper mapper;
 
     @Test
-    public void searchAllUsers2xx_test() throws Exception {
+    void searchAllUsers2xx_test() throws Exception {
         when(removeUserCommand.delete(anyString())).thenReturn(true);
 
         var response = mockMvc.perform(

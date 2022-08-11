@@ -14,14 +14,14 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class EditUserTest {
+class EditUserTest {
     private final PersistUserAdapter persist = mock(PersistUserAdapter.class);
     private final FindUserAdapter find = mock(FindUserAdapter.class);
     private final Validation validation = new Validation(find);
     private final EditUser editUser = new EditUser(persist, find, validation);
 
     @Test
-    public void editSuccess_test() throws PasswordEncryptionException {
+    void editSuccess_test() throws PasswordEncryptionException {
         when(find.findByUsername(any())).thenReturn(userModelMock());
         when(persist.save(any())).thenReturn(userModelMock());
 

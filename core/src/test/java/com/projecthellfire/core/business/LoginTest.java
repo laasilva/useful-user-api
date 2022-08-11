@@ -10,13 +10,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static com.projecthellfire.core.TestMocks.*;
 
-public class LoginTest {
+class LoginTest {
     private final FindUserAdapter find = mock(FindUserAdapter.class);
     private final Validation validation = new Validation(find);
     private final Login login = new Login(validation);
 
     @Test
-    public void loginSuccess_test() throws PasswordEncryptionException {
+    void loginSuccess_test() throws PasswordEncryptionException {
         when(find.findByUsername(any())).thenReturn(userModelEncryptedMock());
 
         var response = login.login(userModelMock());
@@ -25,14 +25,14 @@ public class LoginTest {
     }
 
     @Test
-    public void loginInvalidPassword_test() {
+    void loginInvalidPassword_test() {
         when(find.findByUsername(any())).thenReturn(userModelMock());
 
         assertThrows(ValidationException.class, () -> login.login(userModelMock()));
     }
 
     @Test
-    public void loginInvalidUsername_test() {
+    void loginInvalidUsername_test() {
         when(find.findByUsername(any())).thenReturn(null);
 
         assertThrows(ValidationException.class, () -> login.login(userModelMock()));

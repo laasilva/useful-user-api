@@ -29,7 +29,7 @@ import static com.projecthellfire.application.TestMocks.*;
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = UserPostController.class)
 @RunWith(SpringRunner.class)
-public class UserPostControllerTest {
+class UserPostControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
@@ -42,7 +42,7 @@ public class UserPostControllerTest {
     private LoginCommand loginCommand;
 
     @Test
-    public void save2xx_test() throws Exception {
+    void save2xx_test() throws Exception {
         var userRequest = userRequestMock();
 
         when(mapper.toDto(any())).thenReturn(userResponseMock());
@@ -57,7 +57,7 @@ public class UserPostControllerTest {
         ).andExpect(MockMvcResultMatchers.status().isCreated());
     }
     @Test
-    public void login2xx_test() throws Exception {
+    void login2xx_test() throws Exception {
         var loginRequest = loginRequestMock();
 
         when(mapper.toDto(any())).thenReturn(userResponseMock());

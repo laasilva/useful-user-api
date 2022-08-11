@@ -25,7 +25,7 @@ import static com.projecthellfire.application.TestMocks.*;
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = UserGetController.class)
 @RunWith(SpringRunner.class)
-public class UserGetControllerTest {
+class UserGetControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
@@ -34,7 +34,7 @@ public class UserGetControllerTest {
     private SearchUserCommand searchUserCommand;
 
     @Test
-    public void searchAllUsers2xx_test() throws Exception {
+    void searchAllUsers2xx_test() throws Exception {
         when(searchUserCommand.findAll()).thenReturn(userModelListMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 
@@ -47,7 +47,7 @@ public class UserGetControllerTest {
     }
 
     @Test
-    public void searchAllUsers2xxEmpty_test() throws Exception {
+    void searchAllUsers2xxEmpty_test() throws Exception {
         when(searchUserCommand.findAll()).thenReturn(List.of());
         when(mapper.toDto(any())).thenReturn(null);
 
@@ -60,7 +60,7 @@ public class UserGetControllerTest {
     }
 
     @Test
-    public void searchByUsername2xx_test() throws Exception {
+    void searchByUsername2xx_test() throws Exception {
         when(searchUserCommand.findByUsername(anyString())).thenReturn(userModelMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 
@@ -73,7 +73,7 @@ public class UserGetControllerTest {
     }
 
     @Test
-    public void searchById2xx_test() throws Exception {
+    void searchById2xx_test() throws Exception {
         when(searchUserCommand.findById(anyInt())).thenReturn(userModelMock());
         when(mapper.toDto(any())).thenReturn(userResponseMock());
 
